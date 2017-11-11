@@ -4,18 +4,18 @@ public class Node {
     private Node left;
     private Node right;
 
-    public Node(char l, int freq) {
-        letter = l;
-        frequency = freq;
+    public Node(char letter, int frequency) {
+        this.letter = letter;
+        this.frequency = frequency;
         left = null;
         right = null;
     }
 
-    public Node(char l, int freq, Node le, Node ri) {
-        letter = l;
-        frequency = freq;
-        left = le;
-        right = ri;
+    public Node(char letter, int frequency, Node left, Node right) {
+        this.letter = letter;
+        this.frequency = frequency;
+        this.left = left;
+        this.right = right;
     }
 
     public char getLetter() {
