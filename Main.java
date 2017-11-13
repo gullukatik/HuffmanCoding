@@ -1,10 +1,8 @@
 import java.util.ArrayList;
-import java.util.Base64;
-
 
 public class Main {
     public static void main(String[] args) {
-        String test = "ozanata";
+        String test = "ozan ata";
         ArrayList<Boolean> code = new ArrayList<>();
         Encode encode = new Encode(test);
         encode.findFrequencies();
@@ -12,9 +10,9 @@ public class Main {
         encode.generateHuffmanCodes(encode.getHuffmanTree(), code);
         encode.compressText();
         byte[] bytes = encode.getCompressedText();
-        bytes.toString();
         String s = new String(bytes);
-        System.out.println(bytes);
+        for (int i = 0; i < bytes.length; i++)
+            System.out.println(bytes[i]);
         Decode decode = new Decode(encode.getCompressedText(), encode.getBitSize(), encode.getFrequencies());
         decode.buildTree();
         decode.decompressText();
